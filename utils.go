@@ -10,7 +10,7 @@ import (
 
 var Version = "0.1.0"
 
-func UserAgent() string {
+func GetUserAgent() string {
 	return fmt.Sprintf(
 		"IPCluesGo/%s (go/%s; os/%s; arch/%s)",
 		Version,
