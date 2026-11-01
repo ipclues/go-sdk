@@ -8,16 +8,15 @@ import (
 	"strings"
 )
 
-const (
-	sdkVersion = "0.1.0"
-	sdkName    = "IPCluesGoSDK"
-)
+var Version = "0.1.0"
 
-func GetUserAgent() string {
+func UserAgent() string {
 	return fmt.Sprintf(
-		"%s/%s (language/go#%s; os/%s; arch/%s)",
-		sdkName, sdkVersion, runtime.Version(),
-		runtime.GOOS, runtime.GOARCH,
+		"IPCluesGo/%s (go/%s; os/%s; arch/%s)",
+		Version,
+		strings.TrimPrefix(runtime.Version(), "go"),
+		runtime.GOOS,
+		runtime.GOARCH,
 	)
 }
 
